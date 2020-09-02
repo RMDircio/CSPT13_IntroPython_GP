@@ -56,13 +56,22 @@ s_names = []
 # Create a new dictionary
 
 # empty
+d = {}
 
 # key value pairs
+d2 = {
+    'name' : 'Tom',
+    'age' : 41
+}
 
 # access an element via its key
+print(d2['name'])
 
 
 
 # Lets think about Tuples?
-# this of an imutable list --> the tuple
+
+# this of an imutable list --> the tuple (read only = imutable)
 # good for constant values
+
+t = (5, 7, 8, 9) # this is a tuple - can not change any of the data
