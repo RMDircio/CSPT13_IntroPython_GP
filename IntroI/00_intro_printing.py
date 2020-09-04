@@ -14,7 +14,7 @@
 
 
 first_name = "Tom"
-# print("Hello CSPT13 and " + first_name)
+# print("Hello CSPT13 and", first_name)
 # num = 23.87
 
 # # f strings
