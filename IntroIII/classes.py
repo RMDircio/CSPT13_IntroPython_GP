@@ -7,6 +7,7 @@
 # hold x and y as integers
 # constructor that can take in x and y
 
+# example of a constructor in JAVA
 # class Vec2 {
 #     constructor(x, y) { 
 #         this.x = x;
