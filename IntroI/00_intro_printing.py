@@ -29,5 +29,3 @@ first_name = "Tom"
 
 print(f"Hello CSPT13 and           {len('this is a test')}     {first_name}.......".strip())
 # print("something on a new line")
-
-# first_name
