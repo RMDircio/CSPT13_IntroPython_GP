@@ -1,3 +1,6 @@
+#----------------------------------------------------------------
+''' Artem Litchanov's Lecture CSPT 8 '''
+
 # What is U.P.E.R?
 
 ## U - Stands for UNDERSTAND
