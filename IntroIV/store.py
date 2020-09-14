@@ -1,10 +1,9 @@
-# lets write a store class with a name and categories
-
+# # lets write a store class with a name and categories
 # class Store:
 #     def __init__(self, name, categories):
 #         # attributes
-#         self.name = name
-#         self.categories = categories
+#         self.name = name # string has_a name
+#         self.categories = categories # has_a (has_many) composition
 
 #     def __str__(self):
 #         ret = f"{self.name}\n"
@@ -17,16 +16,17 @@
 #     def __repr__(self):
 #         return f"Store({self.name}, {self.categories})"
 
-# how can we represent this class data as a string?
+# # how can we represent this class data as a string?
 
 #----------------------------------------------------------------#
 #----------------------------------------------------------------#
 #----------------------------------------------------------------#
-
 ''' Artem Litchanov's Lecture CSPT 8 '''
 
 # import the category class we made
 from category import Category
+from store import Sneaker, SoccerBall
+
 
 class Store:
     # attributes
@@ -40,6 +40,7 @@ class Store:
     def __init__(self, name, categories): # self is the current instance of class
         # need to assign the variables
         self.name = name
+        # example of composition here with categories
         self.categories = categories
         self.employees = [] # make some employees
 
@@ -54,7 +55,7 @@ class Store:
         counter = 1
         for category in self.categories:
             output += f'\n {counter}. {category.name}'
-            # incriment the counter - adding it then setting it
+            # increment the counter - adding it then setting it
             counter += 1
         
         # return a string representing the store
@@ -66,47 +67,34 @@ class Store:
         return f'Self.name = {self.name} ; self.categories = {self.categories}'
 
 
-### stores
+# items
+virtue = SoccerBall('VBall',
+                    '50',
+                    'leather',
+                    'Virtue Spots', 
+                    'black and orange',
+                    )
+
+adidas = Sneakers('Adidas High Top',
+                '100',
+                '7',
+                'ADIDAS STREET', 
+                'High Top' 
+                'White',
+                'White',
+                )
 
 # new categories
 # empty [] here is the product array - we are makeing it empty for now
-running_category = Category('Running', "All your running needs", [])
+running_category = Category('Running', "All your running needs", [adidas])
 baseball_category = Category('Baseball', "Cubs Unite!", [])
 basketball_category = Category('Basketball', 'Indoor and outdoor products', [])
+football_category = Category('Football', 'The American kind', [])
+soccer_category = Category('Soccer', 'The real football', [virtue])
 
 
+### stores
 sports_store = Store('REI', [running_category, baseball_category, baseball_category])
-# print(sports_store)
-
-grocery_store = Store("ALdi's", ['Meat', 'Dairy', 'Produce', 'Frozen', 'Baking'])
-# print(grocery_store)
-
-# print(sports_store.name)
-# print(grocery_store.name)
-
-# print the repr version
-# print(repr(sports_store))
-# print(repr(grocery_store))
-
-# print a category
-# print(running_category)
-
-
-### REPL <-- READ EVALUATE PRINT LOOP
-
-# print(sports_store)
-
-# READ part of REPL
-# get user input 
-# user_choice = input('Please choose a category (#): ')
-
-# EVALUATE part of REPL and PRINT part of REPL
-# seperating this out:
-# chosen_category = sports_store.categories[int(user_input)]
-# print(chosen_category)
-
-# last two part put together
-# print(sports_store.categories[int(user_choice)])
 
 # put everything into a loop
 
@@ -132,3 +120,6 @@ while True:
         # how to prevent a error when strings are entered for choice
     except ValueError:
         print("Please enter a number")
+
+
+
