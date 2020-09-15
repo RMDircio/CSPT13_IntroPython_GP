@@ -24,9 +24,15 @@
 ''' Artem Litchanov's Lecture CSPT 8 '''
 
 # import the category class we made
-from category import Category
-from store import Sneaker, SoccerBall
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from IntroIII.category import Category
+from product import Sneakers, SoccerBall
+
+import sys
+print(sys.path)
+breakpoint()
 
 class Store:
     # attributes
